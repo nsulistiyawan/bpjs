@@ -1,10 +1,10 @@
 # BPJS Kesehatan Indonesia
-PHP package to access BPJS Kesehatan API. 
+PHP package to access BPJS Kesehatan API :ambulance:. 
 This package is a wrapper of 
 https://dvlp.bpjs-kesehatan.go.id/VClaim-Katalog 
 
-Created because i don't really wanna get my hands dirty because of using the old php-curl
-:shit:.
+Created because i don't really wanna get my hands dirty coz of using the old php-curl
+:shit: example.
 
 #### Installation :fire:
 
