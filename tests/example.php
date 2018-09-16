@@ -2,18 +2,23 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-//use your own config
-$conf_vclaim = [
-    'cons_id' => '12345',
-    'secret_key' => 'reallysecretkey',
+//use your own bpjs config
+$vclaim_conf = [
+    'cons_id' => '123456',
+    'secret_key' => '123456',
     'base_url' => 'https://dvlp.bpjs-kesehatan.go.id',
     'service_name' => 'vclaim-rest'
 ];
 
+
+//use referensi service
 $referensi = new Nsulistiyawan\Bpjs\VClaim\Referensi();
-$referensi->configure($conf_vclaim);
+$referensi->configure($vclaim_conf);
 var_dump($referensi->diagnosa('A00'));
 
-
+//use peserta service
+$peserta = new \Nsulistiyawan\Bpjs\VClaim\Peserta();
+$peserta->configure($vclaim_conf);
+var_dump($peserta->getByNoKartu('123456789','2018-09-16'));
 
 

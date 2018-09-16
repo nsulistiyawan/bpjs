@@ -1,5 +1,5 @@
 <?php
-namespace Nsulistiyawan\VClaim;
+namespace Nsulistiyawan\Bpjs\VClaim;
 
 use Nsulistiyawan\Bpjs\BpjsService;
 
