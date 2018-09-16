@@ -1,0 +1,21 @@
+{
+    "name": "nsulistiyawan/bpjs",
+    "description": "Wrapper for BPJS Indonesia",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Neno Sulistiyawan",
+            "email": "aburamesino@gmail.com"
+        }
+    ],
+    "license": "mit",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4" : {
+            "Nsulistiyawan\\Bpjs\\" : "src"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
