@@ -41,9 +41,10 @@ var_dump($peserta->getByNoKartu('123456789','2018-09-16'));
 - [x] Referensi
 - [x] Peserta
 - [x] SEP
-- [ ] Rujukan
-- [ ] Lembar Pengajuan Klaim
-- [ ] Monitoring
+- [x] Rujukan
+- [x] Lembar Pengajuan Klaim
+- [x] Monitoring
+- [ ] Aplicare
 
 
 #### Contributions :ok_hand:
