@@ -6,10 +6,6 @@ use Nsulistiyawan\Bpjs\BpjsService;
 class Referensi extends BpjsService
 {
 
-    public function __construct()
-    {
-    }
-
     public function diagnosa($keyword)
     {
         $response = $this->get('referensi/diagnosa/'.$keyword);

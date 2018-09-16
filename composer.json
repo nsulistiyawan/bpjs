@@ -11,8 +11,8 @@
     "license": "mit",
     "minimum-stability": "dev",
     "autoload": {
-        "psr-4" : {
-            "Nsulistiyawan\\Bpjs\\" : "src"
+        "psr-4": {
+            "Nsulistiyawan\\Bpjs\\": "src/"
         }
     },
     "require": {
