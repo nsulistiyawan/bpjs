@@ -1,6 +1,8 @@
 <?php
 namespace Nsulistiyawan\Bpjs\VClaim;
-class Sep
+use Nsulistiyawan\Bpjs\BpjsService;
+
+class Sep extends BpjsService
 {
 
     public function insertSEP($data = [])
