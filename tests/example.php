@@ -12,13 +12,9 @@ $vclaim_conf = [
 
 
 //use referensi service
-$referensi = new Nsulistiyawan\Bpjs\VClaim\Referensi();
-$referensi->configure($vclaim_conf);
+$referensi = new Nsulistiyawan\Bpjs\VClaim\Referensi($vclaim_conf);
 var_dump($referensi->diagnosa('A00'));
 
 //use peserta service
-$peserta = new \Nsulistiyawan\Bpjs\VClaim\Peserta();
-$peserta->configure($vclaim_conf);
+$peserta = new \Nsulistiyawan\Bpjs\VClaim\Peserta($vclaim_conf);
 var_dump($peserta->getByNoKartu('123456789','2018-09-16'));
-
-

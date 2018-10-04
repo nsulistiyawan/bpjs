@@ -1,7 +1,7 @@
 # BPJS Kesehatan Indonesia
-PHP package to access BPJS Kesehatan API :ambulance:. 
+PHP package to access BPJS Kesehatan API :ambulance:.
 This package is a wrapper of BPJS VClaim Web Service
-https://dvlp.bpjs-kesehatan.go.id/VClaim-Katalog 
+https://dvlp.bpjs-kesehatan.go.id/VClaim-Katalog
 
 Created because i don't really wanna get my hands dirty coz of using the old php-curl
 :shit: example.
@@ -20,18 +20,16 @@ $vclaim_conf = [
     'service_name' => 'vclaim-rest'
 ];
 
-// use Referensi service 
+// use Referensi service
 // https://dvlp.bpjs-kesehatan.go.id/VClaim-Katalog/Referensi
 
-$referensi = new Nsulistiyawan\Bpjs\VClaim\Referensi();
-$referensi->configure($vclaim_conf);
+$referensi = new Nsulistiyawan\Bpjs\VClaim\Referensi($vclaim_conf);
 var_dump($referensi->diagnosa('A00'));
 
 //use Peserta service
 //https://dvlp.bpjs-kesehatan.go.id/VClaim-Katalog/Peserta
 
-$peserta = new \Nsulistiyawan\Bpjs\VClaim\Peserta();
-$peserta->configure($vclaim_conf);
+$peserta = new \Nsulistiyawan\Bpjs\VClaim\Peserta($vclaim_conf);
 var_dump($peserta->getByNoKartu('123456789','2018-09-16'));
 ```
 

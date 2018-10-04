@@ -5,38 +5,65 @@ use GuzzleHttp\Client;
 
 class BpjsService{
 
+    /**
+     * Guzzle HTTP Client object
+     * @var \GuzzleHttp\Client
+     */
     private $clients;
+
+    /**
+     * Request headers
+     * @var array
+     */
     private $headers;
 
-    // cons_id
+    /**
+     * X-cons-id header value
+     * @var int
+     */
     private $cons_id;
 
-    // X-Timestamp
+    /**
+     * X-Timestamp header value
+     * @var string
+     */
     private $timestamp;
 
-    // X-Signature
+    /**
+     * X-Signature header value
+     * @var string
+     */
     private $signature;
+
+    /**
+     * @var string
+     */
     private $secret_key;
 
-    // 4. Base URL & Service Name
+    /**
+     * @var string
+     */
     private $base_url;
+
+    /**
+     * @var string
+     */
     private $service_name;
 
-    public function __construct()
+    public function __construct($configurations)
     {
         $this->clients = new Client([
             'verify' => false
         ]);
-    }
 
-    public function configure($configurations = []){
         foreach ($configurations as $key => $val){
-            $this->$key = $val;
+            if (property_exists($this, $key)) {
+                $this->$key = $val;
+            }
         }
 
         //set X-Timestamp, X-Signature, and finally the headers
         $this->setTimestamp()->setSignature()->setHeaders();
-        return $this;
     }
 
     protected function setHeaders()
