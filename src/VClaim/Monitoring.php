@@ -16,9 +16,9 @@ class Monitoring extends BpjsService
         $response = $this->get('Monitoring/Klaim/Tanggal/'.$tglPulang.'/JnsPelayanan/'.$jnsPelayanan.'/Status/'.$statusKlaim);
         return json_decode($response, true);
     }
-    public function historyPelayanan($noKartu, $tglMulai, $tglAkhir)
+    public function historyPelayanan($noKartu, $tglAwal, $tglAkhir)
     {
-        $response = $this->get('monitoring/HistoriPelayanan/NoKartu/'.$noKartu.'/tglMulai/'.$tglMulai.'/tglAkhir/'.$tglAkhir);
+        $response = $this->get('monitoring/HistoriPelayanan/NoKartu/'.$noKartu.'/tglAwal/'.$tglAwal.'/tglAkhir/'.$tglAkhir);
         return json_decode($response, true);
     }
     public function dataKlaimJasaRaharja($tglMulai, $tglAkhir)
