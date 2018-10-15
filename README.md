@@ -42,7 +42,7 @@ var_dump($peserta->getByNoKartu('123456789','2018-09-16'));
 - [x] Rujukan
 - [x] Lembar Pengajuan Klaim
 - [x] Monitoring
-- [ ] Aplicare
+- [x] Aplicare
 
 
 #### Contributions :ok_hand:

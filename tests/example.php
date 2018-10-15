@@ -10,8 +10,7 @@ $vclaim_conf = [
     'service_name' => 'vclaim-rest'
 ];
 
-
-//use referensi service
+//use referensi serivce
 $referensi = new Nsulistiyawan\Bpjs\VClaim\Referensi($vclaim_conf);
 var_dump($referensi->diagnosa('A00'));
 
