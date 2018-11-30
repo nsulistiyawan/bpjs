@@ -37,7 +37,7 @@ class Rujukan extends BpjsService
     {
         $record = $multi ? 'List/' : '';
         if ($searchBy == 'RS') {
-            $url = 'Rujukan/RS/Peserta/'.$keyword;
+            $url = 'Rujukan/RS/'.$record.'Peserta/'.$keyword;
         } else {
             $url = 'Rujukan/'.$record.'Peserta/'.$keyword;
         }
