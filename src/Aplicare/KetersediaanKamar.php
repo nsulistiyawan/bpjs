@@ -18,18 +18,26 @@ class KetersediaanKamar extends BpjsService
     }
     public function bedCreate($kodePpk, $data = [])
     {
-        $header = 'application/json';
+        $header = [
+            'Content-Type'=>'application/json'
+        ];
         $response = $this->post('bed/create/'.$kodePpk, $data, $header);
         return json_decode($response, true);
     }
     public function bedUpdate($kodePpk, $data = [])
     {
-        $response = $this->put('bed/update/'.$kodePpk, $data);
+        $header = [
+            'Content-Type'=>'application/json'
+        ];
+        $response = $this->post('bed/update/'.$kodePpk, $data, $header);
         return json_decode($response, true);
     }
     public function bedDelete($kodePpk, $data = [])
     {
-        $response = $this->delete('bed/delete/'.$kodePpk, $data);
+        $header = [
+            'Content-Type'=>'application/json'
+        ];
+        $response = $this->post('bed/delete/'.$kodePpk, $data, $header);
         return json_decode($response, true);
     }
 }
