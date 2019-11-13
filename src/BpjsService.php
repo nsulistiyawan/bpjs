@@ -49,6 +49,7 @@ class BpjsService{
      * @var string
      */
     private $service_name;
+    private $timeout = 0;
 
     public function __construct($configurations)
     {
@@ -100,7 +101,8 @@ class BpjsService{
                 'GET',
                 $this->base_url . '/' . $this->service_name . '/' . $feature,
                 [
-                    'headers' => $this->headers
+                    'headers' => $this->headers,
+                    'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
         } catch (\Exception $e) {
@@ -122,6 +124,7 @@ class BpjsService{
                 [
                     'headers' => $this->headers,
                     'json' => $data,
+                    'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
         } catch (\Exception $e) {
@@ -140,6 +143,7 @@ class BpjsService{
                 [
                     'headers' => $this->headers,
                     'json' => $data,
+                    'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
         } catch (\Exception $e) {
@@ -159,6 +163,7 @@ class BpjsService{
                 [
                     'headers' => $this->headers,
                     'json' => $data,
+                    'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
         } catch (\Exception $e) {
