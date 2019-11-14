@@ -105,6 +105,14 @@ class BpjsService{
                     'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            $handlerContext = $e->getHandlerContext();
+            $response = json_encode([
+                            'metaData' => [
+                                'code' => $handlerContext['errno'],
+                                'message' => $handlerContext['error']
+                            ]
+                        ]);
         } catch (\Exception $e) {
             $response = $e->getResponse()->getBody();
         }
@@ -127,6 +135,14 @@ class BpjsService{
                     'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            $handlerContext = $e->getHandlerContext();
+            $response = json_encode([
+                            'metaData' => [
+                                'code' => $handlerContext['errno'],
+                                'message' => $handlerContext['error']
+                            ]
+                        ]);
         } catch (\Exception $e) {
             $response = $e->getResponse()->getBody();
         }
@@ -146,6 +162,14 @@ class BpjsService{
                     'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            $handlerContext = $e->getHandlerContext();
+            $response = json_encode([
+                            'metaData' => [
+                                'code' => $handlerContext['errno'],
+                                'message' => $handlerContext['error']
+                            ]
+                        ]);
         } catch (\Exception $e) {
             $response = $e->getResponse()->getBody();
         }
@@ -166,6 +190,14 @@ class BpjsService{
                     'timeout' => $this->timeout,
                 ]
             )->getBody()->getContents();
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            $handlerContext = $e->getHandlerContext();
+            $response = json_encode([
+                            'metaData' => [
+                                'code' => $handlerContext['errno'],
+                                'message' => $handlerContext['error']
+                            ]
+                        ]);
         } catch (\Exception $e) {
             $response = $e->getResponse()->getBody();
         }
