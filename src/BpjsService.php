@@ -106,13 +106,22 @@ class BpjsService{
                 ]
             )->getBody()->getContents();
         } catch (\GuzzleHttp\Exception\RequestException $e) {
-            $handlerContext = $e->getHandlerContext();
-            $response = json_encode([
-                            'metaData' => [
-                                'code' => $handlerContext['errno'],
-                                'message' => $handlerContext['error']
-                            ]
-                        ]);
+            if ($e->getCode() == 0) {
+                $handlerContext = $e->getHandlerContext();
+                $response = json_encode([
+                                'metaData' => [
+                                    'code' => $handlerContext['errno'],
+                                    'message' => $handlerContext['error']
+                                ]
+                            ]);
+            }
+            else
+                $response = json_encode([
+                                'metaData' => [
+                                    'code' => $e->getCode(),
+                                    'message' => $e->getMessage()
+                                ]
+                            ]);
         } catch (\Exception $e) {
             $response = $e->getResponse()->getBody();
         }
